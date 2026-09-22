@@ -47,15 +47,19 @@ double processPurchase(int choice, double totalPayment) {
     double price;
     string itemName;
 
-    if (choice == 1) {
-        price = 3.50;
-        itemName = "Soap";
-    } else if (choice == 2) {
-        price = 6.80;
-        itemName = "Shampoo";
-    } else {
-        price = 11.20;
-        itemName = "Detergent";
+    switch (choice) {
+        case 1:
+            price = 3.50;
+            itemName = "Soap";
+            break;
+        case 2:
+            price = 6.80;
+            itemName = "Shampoo";
+            break;
+        case 3:
+            price = 11.20;
+            itemName = "Detergent";
+            break;
     }
 
     int quantity = inputQuantity();
