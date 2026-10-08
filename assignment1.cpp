@@ -100,7 +100,7 @@ string inputStudentId() {
     cout << "Enter your Student ID: ";
     getline(cin, studentId);
 
-    if (studentId.empty() || studentId.find_first_not_of(" \t") == string::npos) {
+    if (studentId.find_first_not_of(" \t") == string::npos) {
         displayError("Student ID cannot be empty.");
         return "";
     }
@@ -116,7 +116,7 @@ string inputStudentName() {
     cout << "Enter your Student Name: ";
     getline(cin, studentName);
 
-    if (studentName.empty() || studentName.find_first_not_of(" \t") == string::npos) {
+    if (studentName.find_first_not_of(" \t") == string::npos) {
         displayError("Student Name cannot be empty.");
         return "";
     }
