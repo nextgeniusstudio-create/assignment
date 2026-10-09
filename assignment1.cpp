@@ -3,7 +3,6 @@
 #include <iomanip>
 using namespace std;
 
-// Function Prototypes
 void displayError(string message);
 string inputStudentId();
 string inputStudentName();
@@ -15,29 +14,15 @@ double calculateTotalFee(int totalCreditHours, double feePerCreditHour);
 void displayRegistrationResult(string studentId, string studentName,int numSubject, int totalCreditHours,double totalFee, bool successful);
 
 
-// Main Function
 int main() {
     string studentId = inputStudentId();
 
-    if (studentId.empty()) {
-        return 0;
-    }
-
     string studentName = inputStudentName();
-
-    if (studentName.empty()) {
-        return 0;
-    }
 
     int numSubject = inputNumberOfSubjects();
 
-    if (numSubject < 0) {
-        return 0;
-    }
-
     int totalCreditHours = 0;
 
-    // Input credit hours for each subject
     for (int i = 1; i <= numSubject; i++) {
         int creditHours = inputCreditHours(i);
 
@@ -60,7 +45,6 @@ int main() {
         return 0;
     }
 
-    // Check registration status
     bool successful = totalCreditHours <= maxCreditHours;
 
     double totalFee = 0;
@@ -85,7 +69,6 @@ int main() {
 }
 
 
-// Function: Display Error
 void displayError(string message) {
     cout << "\n=========================================" << endl;
     cout << "Error: " << message << endl;
@@ -93,7 +76,6 @@ void displayError(string message) {
 }
 
 
-// Function: Input Student ID
 string inputStudentId() {
     string studentId;
 
@@ -109,7 +91,6 @@ string inputStudentId() {
 }
 
 
-// Function: Input Student Name
 string inputStudentName() {
     string studentName;
 
@@ -125,7 +106,6 @@ string inputStudentName() {
 }
 
 
-// Function: Input Number of Subjects
 int inputNumberOfSubjects() {
     int numSubject;
 
@@ -141,7 +121,6 @@ int inputNumberOfSubjects() {
 }
 
 
-// Function: Input Credit Hours
 int inputCreditHours(int subjectNumber) {
     int creditHours;
 
@@ -160,7 +139,7 @@ int inputCreditHours(int subjectNumber) {
 }
 
 
-// Function: Input Fee Per Credit Hour
+
 double inputFeePerCreditHour() {
     double feePerCreditHour;
 
@@ -178,7 +157,6 @@ double inputFeePerCreditHour() {
 }
 
 
-// Function: Input Maximum Credit Hours
 int inputMaxCreditHours() {
     int maxCreditHours;
 
@@ -196,13 +174,11 @@ int inputMaxCreditHours() {
 }
 
 
-// Function: Calculate Total Fee
 double calculateTotalFee(int totalCreditHours, double feePerCreditHour) {
     return totalCreditHours * feePerCreditHour;
 }
 
 
-// Function: Display Registration Result
 void displayRegistrationResult(
     string studentId,
     string studentName,
